@@ -49,11 +49,14 @@ public class RadioScene : Scene
         switch (_key)
         {
             case ConsoleKey.D1:
+                     Game.Escape();
+                     Game.RandomScene();
+                 break;
             case ConsoleKey.D2:
-                
-
+                   Game.Escape();
+                   Game.RandomScene();
+                   break;
             case ConsoleKey.D3:
-                Console.WriteLine("당신은 방사능에 오염되어 사망하였습니다....");
                 Game.GameOver("당신은 방사능에 오염되어 사망하였습니다....");
                 break;
         }

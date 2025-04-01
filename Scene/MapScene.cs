@@ -26,15 +26,25 @@ public class MapScene : Scene
         switch (_key)
         {
             case ConsoleKey.D1:
-                Console.WriteLine("받은 사람이 말합니다.");
-                Console.WriteLine("\"고마워요 정말 고맙습니다. 별 거 아니긴 한데 닭다리 구이 하나 드릴게요!!\"");
-                Game.player.inventory.Remove("Map");
-                Console.WriteLine("그 사람은 닭다리를 주고 떠났습니다...");
-                Console.WriteLine("당신은 배고파서 5초안에 다 먹었습니다...(돼지놈..)");
-                Console.WriteLine("당신은 너무 빨리 먹은 나머지 배탈이 나 일주일을 앓았습니다...");
-                Console.WriteLine("당신의 HP가 1 닳았습니다...");
-                player.hp--;
-                Console.WriteLine("\"오늘의 교훈 음식은 천천히 먹자\"");
+                if (Game.player.IsOwned("Map"))
+                {
+                    Console.WriteLine("받은 사람이 말합니다.");
+                    Console.WriteLine("\"고마워요 정말 고맙습니다. 별 거 아니긴 한데 닭다리 구이 하나 드릴게요!!\"");
+                    Console.WriteLine("그 사람은 닭다리를 주고 떠났습니다...");
+                    Console.WriteLine("당신은 배고파서 5초안에 다 먹었습니다...(돼지놈..)");
+                    Console.WriteLine("당신은 너무 빨리 먹은 나머지 배탈이 나 일주일을 앓았습니다...");
+                    Console.WriteLine("당신의 HP가 1 닳았습니다...");
+                    player.hp--;
+                    Console.WriteLine("\"오늘의 교훈 음식은 천천히 먹자\"");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("\"저 진짜 지도가 없어요..저도 지도 가지고 싶어요..\"");
+                    Console.WriteLine("\"죄송해요.......\"");
+                    Console.WriteLine("밖에 있던 사람이 문을 발로 차고 갑니다....");
+                    Console.WriteLine("\"똑땅햄...\"");
+                }
                 break;
 
             case ConsoleKey.D2:
@@ -55,6 +65,19 @@ public class MapScene : Scene
 
     public override void Next()
     {
-        
+        switch (_key)
+        {
+            case ConsoleKey.D1:
+                Game.Escape();
+                Game.RandomScene();
+                break;
+            case ConsoleKey.D2:
+                Game.GameOver("당신은 폭탄에 맞아 죽었습니다... 건방떨지 마시라는거에요 -석숭이-");
+                break;
+            case ConsoleKey.D3:
+                Game.Escape();
+                Game.RandomScene();
+                break;
+        }
     }
 }
