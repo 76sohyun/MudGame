@@ -55,6 +55,8 @@ public static class Game
 
     public static void RandomScene()
     {
+        if (CurScene == _sceneDic["탈출"]) return;
+        
         Dictionary<string, Scene> sceneDic = new Dictionary<string, Scene>();
         sceneDic = _sceneDic;
         sceneDic.Remove("Title");
