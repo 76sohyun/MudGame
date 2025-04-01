@@ -35,10 +35,11 @@ public class BookScene:Scene
                     Console.WriteLine("녀석은 재빠른 움직임으로 당신의 무기를 피했지만, 오랜 사투 끝에 잡을 수 있었습니다.");
                     Console.WriteLine("당신은 책에 붙은 바퀴벌레를 쳐다보기도 싫어 통째로 땅에 묻었으며,");
                     Console.WriteLine("기력이 조금 빠지긴 했지만, 이제 더이상 바퀴벌레가 없다는 사실이 당신을 꿀잠으로 인도합니다.");
+                    Game.player.inventory.Remove("Book");
                 }
                 break;
             case ConsoleKey.D2:
-                if (Game.player.IsOwned("Book"))
+                if (Game.player.IsOwned("RatPoison"))
                 {
                     Console.WriteLine("쥐약은 분명 탁월한 선택이었으나, 당신이 하나 간과한 것이 있습니다.");
                     Console.WriteLine("바로 저 바퀴벌레는 핵폭발에서도 살아남았다는 사실입니다.");
@@ -48,6 +49,7 @@ public class BookScene:Scene
                     Console.WriteLine("다만 바지에 붙어버린 녀석은 흔적을 남겼으며, 당신은 양손이 모두 까졌습니다.");
                     Console.WriteLine("체력 -1");
                     Game.player.hp -= 1;
+                    Game.player.inventory.Remove("RatPoison");
                 }
                 break;
             case ConsoleKey.D3:
