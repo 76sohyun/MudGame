@@ -4,18 +4,17 @@ public static class Game
 {
     public static bool gameOver;
     public static Dictionary<String, Scene> _sceneDic;
-    
     public static Scene CurScene;
-
     public static Player player;
     public static Player Player
     {
         get { return player; }
         set { player = value; }
     }
-
     private static int livPer;
 
+    public static List<string> items;
+    
     public static void Start()
     {
         gameOver = false;
@@ -25,6 +24,16 @@ public static class Game
         _sceneDic.Add("Ax", new AxScene());
         _sceneDic.Add("Choose", new ItemChoose());
         livPer = 0;
+        
+        items = new List<string>();
+        items.Add("Ax");
+        items.Add("Radio");
+        items.Add("RatPosion");
+        items.Add("Book");
+        items.Add("FirstaidKit");
+        items.Add("Gun");
+        items.Add("Card");
+        items.Add("Map");
     }
 
 
@@ -64,5 +73,4 @@ public static class Game
     {
         CurScene = _sceneDic[newScene];
     }
-
 }
