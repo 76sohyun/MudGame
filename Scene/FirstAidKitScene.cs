@@ -44,6 +44,8 @@ public class FirstAidKitScene : Scene
                 Console.WriteLine("\"띠리리릴리ㅣㄹ뾰보봅보보봅보\"");
                 Console.WriteLine("당신은 약을 먹고 하루 정도 쉬자 몸살이 나았습니다.");
                 Console.WriteLine("이거제~~~~~~~~");
+                Game.player.inventory.Remove("FirstAidKit");
+                
                 break;
         }
     }
