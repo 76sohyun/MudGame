@@ -32,6 +32,8 @@ public static class Game
         _sceneDic.Add("Map", new MapScene());
         _sceneDic.Add("GasMask", new GasMaskScene());
         _sceneDic.Add("탈출", new EscapeScene());
+        _sceneDic.Add("Choose", new ItemChoose());
+        
         
         items = new List<string>();
         items.Add("Ax");

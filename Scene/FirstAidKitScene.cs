@@ -2,7 +2,6 @@
 
 public class FirstAidKitScene : Scene
 {
-    Player player;
     public override void Render()
     {
         Console.WriteLine("당신의 방공호의 전기가 끊긴지 3일이 지났습니다...");
@@ -29,8 +28,8 @@ public class FirstAidKitScene : Scene
                 Console.WriteLine("당신은 일주일내내 앓았습니다..");
                 Console.WriteLine("오늘의 교훈 약을 아끼지말자.");
                 Console.WriteLine("당신의 HP가 2 깎였습니다.");
-                player.hp--;
-                player.hp--;
+                Game.player.hp--;
+                Game.player.hp--;
                 break;
 
             case ConsoleKey.D2:
