@@ -48,7 +48,7 @@ public static class Game
         }
         else return;
     }
-
+    
     public static void RandomScene()
     {
         if (CurScene == _sceneDic["탈출"]) return;
