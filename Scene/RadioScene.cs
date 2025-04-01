@@ -6,8 +6,8 @@ public class RadioScene : Scene
     public override void Render()
     {
         Console.WriteLine("\"가만히 생각하다 이제 밖의 상황이 어떤지 궁금해졌습니다.\"");
-        Console.WriteLine("궁금해진 나머지 참을 수가 없게 되었습니다.");
-        Console.WriteLine("안이 너무 답답한 당신은 어떻게 하시겠습니까?");
+        Console.WriteLine("\"궁금해진 나머지 참을 수가 없게 되었습니다.\"");
+        Console.WriteLine("\"안이 너무 답답한 당신은 어떻게 하시겠습니까?\"");
     }
 
     public override void Choice()
