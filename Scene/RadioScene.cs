@@ -23,7 +23,7 @@ public class RadioScene : Scene
         {
             case ConsoleKey.D1:
                 Console.WriteLine("가만히 기다린 당신은 미쳐 날뛰다가 넘어져 다쳤습니다.");
-                Console.WriteLine("쿳소.........");
+                Console.WriteLine("쿳소..........");
                 Console.WriteLine("당신의 HP가 1 깎였습니다.");
                 player.hp--;
                 break;
