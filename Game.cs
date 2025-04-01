@@ -17,12 +17,16 @@ public static class Game
     
     public static void Start()
     {
+        player = new Player();
         gameOver = false;
         CurScene = new TitleScene();
         _sceneDic = new Dictionary<string, Scene>();
         _sceneDic.Add("Title", new TitleScene());
         _sceneDic.Add("Ax", new AxScene());
         _sceneDic.Add("Choose", new ItemChoose());
+        _sceneDic.Add("탈출", new EscapeScene());
+        
+        
         livPer = 0;
         
         items = new List<string>();
@@ -36,7 +40,55 @@ public static class Game
         items.Add("Map");
     }
 
+    public static void Escape()
+    {
+        Random random = new Random();
+        int value = random.Next(0, 100);
+        if (value < livPer)
+        {
+            CurSceneChange("탈출");
+        }
+        else return;
+    }
 
+    public static void RandomScene()
+    {
+        Dictionary<string, Scene> sceneDic = new Dictionary<string, Scene>();
+        sceneDic = _sceneDic;
+        sceneDic.Remove("Title");
+        sceneDic.Remove("탈출");
+        Random random = new Random();
+        int sceneNum = random.Next(0,sceneDic.Count);
+
+        switch (sceneNum)
+        {
+            case 0:
+                CurScene = sceneDic["Ax"];
+                break;
+            case 1:
+                CurScene = sceneDic["Radio"];
+                break;
+            case 3:
+                CurScene = sceneDic["Choose"];
+                break;
+            case 4:
+                CurScene = sceneDic["Choose"];
+                break;
+            case 5:
+                CurScene = sceneDic["Choose"];
+                break;
+            case 6:
+                CurScene = sceneDic["Choose"];
+                break;
+            case 7:
+                CurScene = sceneDic["Choose"];
+                break;
+            case 8:
+                CurScene = sceneDic["Choose"];
+                break;
+        }
+    }
+    
     public static void End()
     {
         Console.WriteLine("****************************");
@@ -56,6 +108,7 @@ public static class Game
     {
         while (gameOver == false)
         {
+            player.Print();
             CurScene.Render();
             Console.WriteLine();
             CurScene.Choice();
@@ -64,6 +117,7 @@ public static class Game
             CurScene.Result();
             Console.WriteLine();
             CurScene.Wait();
+            Console.WriteLine();
             CurScene.Next();
             livPer += 10;
         }
