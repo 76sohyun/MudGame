@@ -3,6 +3,7 @@
 public class FirstAidKitScene : Scene
 {
     Player player;
+
     public override void Render()
     {
         Console.WriteLine("당신의 방공호의 전기가 끊긴지 3일이 지났습니다...");
@@ -15,7 +16,7 @@ public class FirstAidKitScene : Scene
     public override void Choice()
     {
         Console.WriteLine("1. 이불 덮고 잔다...");
-        Console.WriteLine("2.엇... 마침 옆집 아저씨가 의사인게 떠올랐다.. 집 밖으로 나가서 옆집으로 간다.");
+        Console.WriteLine("2. 엇... 마침 옆집 아저씨가 의사인게 떠올랐다.. 집 밖으로 나가서 옆집으로 간다.");
         Console.WriteLine("3. 구급상자 안에 있는 약을 먹는다.");
     }
 
@@ -45,13 +46,25 @@ public class FirstAidKitScene : Scene
                 Console.WriteLine("당신은 약을 먹고 하루 정도 쉬자 몸살이 나았습니다.");
                 Console.WriteLine("이거제~~~~~~~~");
                 Game.player.inventory.Remove("FirstAidKit");
-                
                 break;
         }
     }
 
     public override void Next()
     {
-        throw new NotImplementedException();
+        switch (_key)
+        {
+            case ConsoleKey.D1:
+                Game.Escape();
+                Game.RandomScene();
+                break;
+            case ConsoleKey.D2:
+                Game.GameOver("문도가 된 당신은 미치광이가 되어 춤추다가 그만 머리를 돌에 부딫혀죽었습니다.");
+                break;
+            case ConsoleKey.D3:
+                Game.Escape();
+                Game.RandomScene();
+                break;
+        }
     }
 }

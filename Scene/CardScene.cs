@@ -57,6 +57,19 @@ public class CardScene : Scene
 
     public override void Next()
     {
-        throw new NotImplementedException();
+        switch (_key)
+        {
+            case ConsoleKey.D1:
+                Game.Escape();
+                Game.RandomScene();
+                break;
+            case ConsoleKey.D2:
+                Game.Escape();
+                Game.RandomScene();
+                break;
+            case ConsoleKey.D3:
+                Game.GameOver("당신은 엄청나게 맞아서 결국 과다출혈로 사망했습니다..... 나대지말라는거에요 -석숭이-");
+                break;
+        }
     }
 }
