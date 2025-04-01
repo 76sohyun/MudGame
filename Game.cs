@@ -31,7 +31,7 @@ public static class Game
         _sceneDic.Add("Card", new CardScene());
         _sceneDic.Add("Map", new MapScene());
         _sceneDic.Add("GasMask", new GasMaskScene());
-        _sceneDic.Add("탈출", new EscapeScene());
+        _sceneDic.Add("Escape", new EscapeScene());
         _sceneDic.Add("Choose", new ItemChoose());
         
         
@@ -53,19 +53,19 @@ public static class Game
         int value = random.Next(0, 100);
         if (value < livPer)
         {
-            CurSceneChange("탈출");
+            CurSceneChange("Escape");
         }
         else return;
     }
     
     public static void RandomScene()
     {
-        if (CurScene == _sceneDic["탈출"]) return;
+        if (CurScene == _sceneDic["Escape"]) return;
         
         Dictionary<string, Scene> sceneDic = new Dictionary<string, Scene>();
         sceneDic = _sceneDic;
         sceneDic.Remove("Title");
-        sceneDic.Remove("탈출");
+        sceneDic.Remove("Escape");
         Random random = new Random();
         int sceneNum = random.Next(0,sceneDic.Count);
 
@@ -136,7 +136,6 @@ public static class Game
             CurScene.Wait();
             Console.WriteLine();
             CurScene.Next();
-            livPer += 10;
             gameOver = player.IsDead();
         }
     }
