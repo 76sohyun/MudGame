@@ -4,6 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World! Seock sung!");
+        Game.Start();
+        Game.Run();
+        Game.End();
     }
 }
