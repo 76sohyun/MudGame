@@ -28,9 +28,7 @@ public class GunScene : Scene
                     Console.WriteLine("문 밖에는 당신의 대피소를 습격하기 위한 괴한들이 있었습니다.");
                     Console.WriteLine("하지만 당신은 총을 가지고 있었고, 괴한들의 습격으로부터 살아남을 수 있었습니다.");
                     Console.WriteLine("총알이 없기에 앞으로는 더욱 조심해야하지만, 값진 교훈을 얻을 수 있었습니다.");
-                    Console.WriteLine("아무도 믿지 말자.");
-                    Game.player.inventory.Remove("Gun");
-
+                    Console.WriteLine("\"아무도 믿지 말자.\"");
                 }
                 else
                 {
@@ -57,6 +55,7 @@ public class GunScene : Scene
                 if (Game.player.IsOwned("Gun"))
                 {
                     Game.livPer += 10;
+                    Game.player.inventory.Remove("Gun");
                     Game.Escape();
                     Game.RandomScene();
                 }

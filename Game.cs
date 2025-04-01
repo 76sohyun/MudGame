@@ -94,13 +94,14 @@ public static class Game
     
     public static void End()
     {
-        Console.WriteLine("**********************************");
-        Console.WriteLine("*            게임오버...           *");
-        Console.WriteLine("**********************************");
+        
     }
     
     public static void GameOver(string reason)
     {
+        Console.WriteLine("**********************************");
+        Console.WriteLine("*            게임오버...           *");
+        Console.WriteLine("**********************************");
         Console.WriteLine();
         Console.WriteLine(reason);
         
@@ -113,12 +114,15 @@ public static class Game
         Console.WriteLine("*****     Game Clear!   *****");
         Console.WriteLine("******************************");
         Console.WriteLine("축하합니다! 당신은 핵폭발에서 살아남았습니다!");
+        
+        gameOver = true;
     }
     
     public static void Run()
     {
         while (gameOver == false)
         {
+            Console.Clear();
             player.Print();
             CurScene.Render();
             Console.WriteLine();
@@ -130,7 +134,10 @@ public static class Game
             CurScene.Wait();
             Console.WriteLine();
             CurScene.Next();
-            gameOver = player.IsDead();
+            if (player.IsDead())
+            {
+                gameOver = true;
+            }
         }
     }
 

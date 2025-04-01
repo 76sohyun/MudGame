@@ -38,13 +38,20 @@ public class CardScene : Scene
                 break;
 
             case ConsoleKey.D2:
-                Console.WriteLine("카드게임을 시작합니다...");
-                Console.WriteLine("2시간 게임 끝에 당신이 이겼습니다.");
-                Game.player.inventory.Remove("Card");
-                Console.WriteLine("\"야 너 잘한다?\"");
-                Console.WriteLine("하하......");
-                Console.WriteLine("\"내가 졌으니 총 한 자루 주마.\"");
-                Console.WriteLine("대장이 총을 준 후 깡패 부하들이 문을 고치고 떠납니다...(착하네요)");
+                if (Game.player.IsOwned("Card"))
+                {
+                    Console.WriteLine("카드게임을 시작합니다...");
+                    Console.WriteLine("2시간 게임 끝에 당신이 이겼습니다.");
+                    Game.player.inventory.Remove("Card");
+                    Console.WriteLine("\"야 너 잘한다?\"");
+                    Console.WriteLine("하하......");
+                    Console.WriteLine("\"내가 졌으니 총 한 자루 주마.\"");
+                    Console.WriteLine("대장이 총을 준 후 깡패 부하들이 문을 고치고 떠납니다...(착하네요)");
+                }
+                else
+                {
+                    ChoiceAgain();
+                }
                 break;
 
             case ConsoleKey.D3:

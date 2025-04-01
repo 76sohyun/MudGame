@@ -29,6 +29,10 @@ public class AxScene : Scene
                     Console.WriteLine("쥐를 잡는데 성공했지만, 너무 세게 휘둘렀는지 도끼가 부러졌습니다.");
                     Game.player.inventory.Remove("Ax");
                 }
+                else
+                {
+                    ChoiceAgain();
+                }
                 break;
             case ConsoleKey.D2:
                 if (Game.player.IsOwned("Gun"))
@@ -37,6 +41,10 @@ public class AxScene : Scene
                     Console.WriteLine("쥐를 잡는데는 성공했지만, 너무 흥분한 나머지 모든 총알을 다 써버리고 말았습니다.");
                     Game.player.inventory.Remove("Gun");
                 }
+                else
+                {
+                    ChoiceAgain();
+                }
                 break;
             case ConsoleKey.D3:
                 if (Game.player.IsOwned("RatPoison"))
@@ -44,6 +52,10 @@ public class AxScene : Scene
                     Console.WriteLine("쥐약의 효과는 엄청났다!");
                     Console.WriteLine("당신은 쥐약을 먹고 죽은 쥐의 시체를 상자 속에 봉인했습니다.");
                     Game.player.inventory.Remove("RatPoison");
+                }
+                else
+                {
+                    ChoiceAgain();
                 }
                 break;
             default:

@@ -37,6 +37,10 @@ public class BookScene:Scene
                     Console.WriteLine("기력이 조금 빠지긴 했지만, 이제 더이상 바퀴벌레가 없다는 사실이 당신을 꿀잠으로 인도합니다.");
                     Game.player.inventory.Remove("Book");
                 }
+                else
+                {
+                    ChoiceAgain();
+                }
                 break;
             case ConsoleKey.D2:
                 if (Game.player.IsOwned("RatPoison"))
@@ -50,6 +54,10 @@ public class BookScene:Scene
                     Console.WriteLine("체력 -1");
                     Game.player.hp -= 1;
                     Game.player.inventory.Remove("RatPoison");
+                }
+                else
+                {
+                    ChoiceAgain();
                 }
                 break;
             case ConsoleKey.D3:

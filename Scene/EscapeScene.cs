@@ -38,6 +38,16 @@ public class EscapeScene : Scene
 
     public override void Next()
     {
-        Game.RandomScene();
+        switch (_key)
+        {
+            case ConsoleKey.D1:
+                break;
+            case ConsoleKey.D2:
+                Game.RandomScene();
+                break;
+            default:
+                break;
+
+        }
     }
 }

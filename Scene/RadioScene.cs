@@ -27,12 +27,19 @@ public class RadioScene : Scene
                 Game.player.hp--;
                 break;
             case ConsoleKey.D2:
+                if (Game.player.IsOwned("Radio"))
+                {
                     Console.WriteLine("\"ㅊㅊ치칯칙..치치치ㅣㅊ치치ㅣㄱ칙\"");
                     Console.WriteLine("\"안내 방송드립니다. 밖에는 방사능 노출의 위험이 있어 절대 나가지 말아주십시오\"");
                     Console.WriteLine("\"최대한 빠른 시일내에 구조작업을 할 예정이오니 조금만 기다려주시기 바랍니다.\"");
                     Console.WriteLine("\"다ㅏ시 한 번 말ㄹㄹ씀ㅁㅁㅁㅁㅁ\"");
                     Console.WriteLine("갑자기 음성이 끊기더니 라디오가 고장났습니다.");
                     Game.player.inventory.Remove("Radio");
+                }
+                else
+                {
+                    ChoiceAgain();
+                }
                 break;
             case ConsoleKey.D3:
                 Console.WriteLine("당신은 문을 열고 나갑니다...");

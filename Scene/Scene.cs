@@ -24,4 +24,15 @@ public abstract class Scene
     }
     
     public abstract void Next();
+    
+    public void ChoiceAgain()
+    {
+        Console.Clear();
+        Game.player.Print();
+        Render();
+        Choice();
+        Input();
+        Console.WriteLine();
+        Result();
+    }
 }
