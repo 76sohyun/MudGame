@@ -4,13 +4,37 @@ public class TitleScene :Scene
 {
     public override void Render()
     {
-        Console.WriteLine("***********************");
-        Console.WriteLine("*****     1분     *****");
-        Console.WriteLine("***********************");
+        Console.Clear();
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine("☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆");
+        Console.ResetColor();
+        Console.WriteLine();
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.WriteLine("＼　　ヽ　　　　i　　|　　　　 /　　　/　                    ");
+        Console.WriteLine("　　　＼　                                                           ");
+        Console.WriteLine("!                                                                        ");
+        Console.WriteLine("　　　　　　　　　　　　　　;' ':;,,　　　　 ,;'':;,             ");
+        Console.WriteLine("　　　　　　　　　　　　　;'　　 ':;,.,.,.,.,.,,,;'　　';,           ");
+        Console.WriteLine("　　ー　　　　　　　　 ,:'　　　　　　　　 　 ::::::::､         ");
+        Console.WriteLine("　_＿　　　　　　　　,:' ／ 　 　　　　＼ 　　 ::::::::',        ");
+        Console.WriteLine("　　　　　二　　　　:'　 ●　　　　　 ●　 　　   ::::::::i    .");
+        Console.WriteLine("　　￣　　　　　　　i　 '''　(__人_)　　'''' 　　 ::::::::::i      ");
+        Console.WriteLine("　　　　-‐　　　　　 :　 　　　　　　　　　 　 ::::::::i      ");
+        Console.WriteLine("　　　　　　　　　　`:,､ 　　　　　 　 　  :::::::::: /           ");
+        Console.WriteLine("　　　　／　　　　　　 ,:'　　　　　　　  : ::::::::::::｀:､      ");
+        Console.WriteLine("　　　　　　　　　　　 ,:'　　　　　　　　  : : ::::::::::｀:､   ");
+
+        Console.ResetColor();
+        Console.WriteLine();
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine("☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆");
+        Console.WriteLine("☆                     O   N   E   M  I  N  U  T  E                        ☆");
+        Console.WriteLine("☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆");
+        Console.ResetColor();
     }
 
     public override void Choice()
-    {
+    {           
         Console.WriteLine("1. 게임 시작");
         Console.WriteLine("2. 게임 종료");
     }
