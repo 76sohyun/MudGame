@@ -61,7 +61,7 @@ public class BookScene:Scene
                 }
                 break;
             case ConsoleKey.D3:
-                Console.WriteLine("당신은 애써 바퀴버레를 무시했고, 그것도 당신을 무시하기 시작했습니다.");
+                Console.WriteLine("당신은 애써 바퀴벌레를 무시했고, 그것도 당신을 무시하기 시작했습니다.");
                 Console.WriteLine("어느 순간부터 그 녀석의 소리가 들리지 않았고, 당신은 안도의 한숨을 쉬었습니다.");
                 break;
             default:

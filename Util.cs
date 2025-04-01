@@ -9,5 +9,4 @@ public class Util
             Thread.Sleep(delay);
             Console.ResetColor();
         }
-    
 }
