@@ -2,7 +2,9 @@
 
 public static class Game
 {
+    private static int livPer;
     public static bool gameOver;
+    public static List<string> items;
     public static Dictionary<String, Scene> _sceneDic;
     public static Scene CurScene;
     public static Player player;
@@ -11,25 +13,19 @@ public static class Game
         get { return player; }
         set { player = value; }
     }
-    private static int livPer;
-
-    public static List<string> items;
     
     public static void Start()
     {
         player = new Player();
         gameOver = false;
+        livPer = 0;
         CurScene = new TitleScene();
+        
         _sceneDic = new Dictionary<string, Scene>();
         _sceneDic.Add("Title", new TitleScene());
         _sceneDic.Add("Ax", new AxScene());
         _sceneDic.Add("Choose", new ItemChoose());
         _sceneDic.Add("탈출", new EscapeScene());
-        
-        
-        livPer = 0;
-        
-        player = new Player();
         
         items = new List<string>();
         items.Add("Ax");
@@ -95,14 +91,13 @@ public static class Game
     
     public static void End()
     {
-        
+        Console.WriteLine("**********************************");
+        Console.WriteLine("*            게임오버...           *");
+        Console.WriteLine("**********************************");
     }
     
     public static void GameOver(string reason)
     {
-        Console.WriteLine("************************************");
-        Console.WriteLine("*           게임오버...              *");
-        Console.WriteLine("************************************");
         Console.WriteLine();
         Console.WriteLine(reason);
         

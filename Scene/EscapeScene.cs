@@ -38,6 +38,6 @@ public class EscapeScene : Scene
 
     public override void Next()
     {
-        //todo : 남은 이벤트 중에 랜덤?
+        Game.RandomScene();
     }
 }

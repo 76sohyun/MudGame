@@ -40,6 +40,7 @@ public class AxScene : Scene
 
     public override void Next()
     {
-        throw new NotImplementedException();
+        Game.Escape();
+        Game.RandomScene();
     }
 }

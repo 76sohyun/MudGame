@@ -40,7 +40,8 @@ public class ItemChoose : Scene
     {
         if (Game.player.inventory.Count == 4)
         {
-            Game.CurSceneChange("Ax");
+            Game.Escape();
+            Game.RandomScene();
         }
     }
 }
