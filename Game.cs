@@ -24,7 +24,13 @@ public static class Game
         _sceneDic = new Dictionary<string, Scene>();
         _sceneDic.Add("Title", new TitleScene());
         _sceneDic.Add("Ax", new AxScene());
-        _sceneDic.Add("Choose", new ItemChoose());
+        _sceneDic.Add("Radio", new RadioScene());
+        _sceneDic.Add("Book", new BookScene());
+        _sceneDic.Add("FirstAidKit", new FirstAidKitScene());
+        _sceneDic.Add("Gun", new GunScene());
+        _sceneDic.Add("Card", new CardScene());
+        _sceneDic.Add("Map", new MapScene());
+        _sceneDic.Add("GasMask", new GasMaskScene());
         _sceneDic.Add("탈출", new EscapeScene());
         
         items = new List<string>();
@@ -36,6 +42,7 @@ public static class Game
         items.Add("Gun");
         items.Add("Card");
         items.Add("Map");
+        items.Add("GasMask");
     }
 
     public static void Escape()
@@ -68,23 +75,23 @@ public static class Game
             case 1:
                 CurScene = sceneDic["Radio"];
                 break;
+            case 2:
+                CurScene = sceneDic["GasMask"];
+                break;
             case 3:
-                CurScene = sceneDic["Choose"];
+                CurScene = sceneDic["Book"];
                 break;
             case 4:
-                CurScene = sceneDic["Choose"];
+                CurScene = sceneDic["FirstAidKit"];
                 break;
             case 5:
-                CurScene = sceneDic["Choose"];
+                CurScene = sceneDic["Gun"];
                 break;
             case 6:
-                CurScene = sceneDic["Choose"];
+                CurScene = sceneDic["Card"];
                 break;
             case 7:
-                CurScene = sceneDic["Choose"];
-                break;
-            case 8:
-                CurScene = sceneDic["Choose"];
+                CurScene = sceneDic["Map"];
                 break;
         }
     }
