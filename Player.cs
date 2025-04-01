@@ -44,7 +44,8 @@ public class Player
             Console.ForegroundColor = ConsoleColor.Red;
            Console.Write(" ■ ");
         }
-        Console.ResetColor();
+        
+        Console.WriteLine();
         Console.WriteLine();
             
     }
