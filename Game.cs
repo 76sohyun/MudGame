@@ -30,9 +30,9 @@ public static class Game
         items = new List<string>();
         items.Add("Ax");
         items.Add("Radio");
-        items.Add("RatPosion");
+        items.Add("RatPoison");
         items.Add("Book");
-        items.Add("FirstaidKit");
+        items.Add("FirstAidKit");
         items.Add("Gun");
         items.Add("Card");
         items.Add("Map");
@@ -128,6 +128,7 @@ public static class Game
             Console.WriteLine();
             CurScene.Next();
             livPer += 10;
+            gameOver = player.IsDead();
         }
     }
 
