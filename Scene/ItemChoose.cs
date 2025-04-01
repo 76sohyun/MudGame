@@ -40,8 +40,8 @@ public class ItemChoose : Scene
     {
         if (Game.player.inventory.Count == 4)
         {
-            Game.Escape();
             Game.RandomScene();
+            Game.Escape();
         }
     }
 }

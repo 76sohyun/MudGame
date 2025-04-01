@@ -53,15 +53,18 @@ public class FirstAidKitScene : Scene
         switch (_key)
         {
             case ConsoleKey.D1:
-                Game.Escape();
+                Game.livPer += 10;
                 Game.RandomScene();
+                Game.Escape();
                 break;
             case ConsoleKey.D2:
+                Game.livPer += 10;
                 Game.GameOver("문도가 된 당신은 미치광이가 되어 춤추다가 그만 머리를 돌에 부딫혀죽었습니다.");
                 break;
             case ConsoleKey.D3:
-                Game.Escape();
+                Game.livPer += 10;
                 Game.RandomScene();
+                Game.Escape();
                 break;
         }
     }

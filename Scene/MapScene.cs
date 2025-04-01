@@ -68,15 +68,17 @@ public class MapScene : Scene
         switch (_key)
         {
             case ConsoleKey.D1:
-                Game.Escape();
+                Game.livPer += 10;
                 Game.RandomScene();
+                Game.Escape();
                 break;
             case ConsoleKey.D2:
                 Game.GameOver("당신은 폭탄에 맞아 죽었습니다... 건방떨지 마시라는거에요 -석숭이-");
                 break;
             case ConsoleKey.D3:
-                Game.Escape();
+                Game.livPer += 10;
                 Game.RandomScene();
+                Game.Escape();
                 break;
         }
     }

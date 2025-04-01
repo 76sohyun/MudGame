@@ -63,7 +63,8 @@ public class BookScene:Scene
 
     public override void Next()
     {
-        Game.Escape();
+        Game.livPer += 10;
         Game.RandomScene();
+        Game.Escape();
     }
 }

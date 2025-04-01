@@ -56,6 +56,7 @@ public class GunScene : Scene
             case ConsoleKey.D1:
                 if (Game.player.IsOwned("Gun"))
                 {
+                    Game.livPer += 10;
                     Game.Escape();
                     Game.RandomScene();
                 }
@@ -66,8 +67,9 @@ public class GunScene : Scene
 
                 break;
             case ConsoleKey.D2:
-                Game.Escape();
+                Game.livPer += 10;
                 Game.RandomScene();
+                Game.Escape();
                 break;
         }
     }

@@ -2,7 +2,6 @@
 
 public class RadioScene : Scene
 {
-    private Player player;
     public override void Render()
     {
         Console.WriteLine("\"가만히 생각하다 이제 밖의 상황이 어떤지 궁금해졌습니다.\"");
@@ -25,7 +24,7 @@ public class RadioScene : Scene
                 Console.WriteLine("가만히 기다린 당신은 미쳐 날뛰다가 넘어져 다쳤습니다.");
                 Console.WriteLine("쿳소..........");
                 Console.WriteLine("당신의 HP가 1 깎였습니다.");
-                player.hp--;
+                Game.player.hp--;
                 break;
             case ConsoleKey.D2:
                     Console.WriteLine("\"ㅊㅊ치칯칙..치치치ㅣㅊ치치ㅣㄱ칙\"");
@@ -49,12 +48,14 @@ public class RadioScene : Scene
         switch (_key)
         {
             case ConsoleKey.D1:
-                     Game.Escape();
+                     Game.livPer += 10;
                      Game.RandomScene();
+                     Game.Escape();
                  break;
-            case ConsoleKey.D2:
-                   Game.Escape();
+            case ConsoleKey.D2: 
+                   Game.livPer += 10;
                    Game.RandomScene();
+                   Game.Escape();
                    break;
             case ConsoleKey.D3:
                 Game.GameOver("당신은 방사능에 오염되어 사망하였습니다....");

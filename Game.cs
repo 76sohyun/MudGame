@@ -2,7 +2,7 @@
 
 public static class Game
 {
-    private static int livPer;
+    public static int livPer;
     public static bool gameOver;
     public static List<string> items;
     public static Dictionary<String, Scene> _sceneDic;
@@ -60,40 +60,34 @@ public static class Game
     
     public static void RandomScene()
     {
-        if (CurScene == _sceneDic["Escape"]) return;
-        
-        Dictionary<string, Scene> sceneDic = new Dictionary<string, Scene>();
-        sceneDic = _sceneDic;
-        sceneDic.Remove("Title");
-        sceneDic.Remove("Escape");
         Random random = new Random();
-        int sceneNum = random.Next(0,sceneDic.Count);
+        int sceneNum = random.Next(0,_sceneDic.Count-2);
 
         switch (sceneNum)
         {
             case 0:
-                CurScene = sceneDic["Ax"];
+                CurScene = _sceneDic["Ax"];
                 break;
             case 1:
-                CurScene = sceneDic["Radio"];
+                CurScene = _sceneDic["Radio"];
                 break;
             case 2:
-                CurScene = sceneDic["GasMask"];
+                CurScene = _sceneDic["GasMask"];
                 break;
             case 3:
-                CurScene = sceneDic["Book"];
+                CurScene = _sceneDic["Book"];
                 break;
             case 4:
-                CurScene = sceneDic["FirstAidKit"];
+                CurScene = _sceneDic["FirstAidKit"];
                 break;
             case 5:
-                CurScene = sceneDic["Gun"];
+                CurScene = _sceneDic["Gun"];
                 break;
             case 6:
-                CurScene = sceneDic["Card"];
+                CurScene = _sceneDic["Card"];
                 break;
             case 7:
-                CurScene = sceneDic["Map"];
+                CurScene = _sceneDic["Map"];
                 break;
         }
     }

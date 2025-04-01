@@ -2,7 +2,6 @@
 
 public class CardScene : Scene
 {
-    private Player player;
     public override void Render()
     {
         Console.WriteLine("\"코카카칵 팍\"");
@@ -34,7 +33,7 @@ public class CardScene : Scene
                 Console.WriteLine("제발 살려주세요");
                 Console.WriteLine("대장은 당신의 얼굴에 죽빵을 날리고 부하들과 떠납니다.");
                 Console.WriteLine("당신의 HP가 1 깎였습니다.");
-                player.hp--;
+                Game.player.hp--;
                 Console.WriteLine("아프당.............");
                 break;
 
@@ -60,14 +59,17 @@ public class CardScene : Scene
         switch (_key)
         {
             case ConsoleKey.D1:
-                Game.Escape();
+                Game.livPer += 10;
                 Game.RandomScene();
+                Game.Escape();
                 break;
             case ConsoleKey.D2:
-                Game.Escape();
+                Game.livPer += 10;
                 Game.RandomScene();
+                Game.Escape();
                 break;
             case ConsoleKey.D3:
+                Game.livPer += 10;
                 Game.GameOver("당신은 엄청나게 맞아서 결국 과다출혈로 사망했습니다..... 나대지말라는거에요 -석숭이-");
                 break;
         }

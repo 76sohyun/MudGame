@@ -53,7 +53,8 @@ public class AxScene : Scene
 
     public override void Next()
     {
-        Game.Escape();
+        Game.livPer += 10;
         Game.RandomScene();
+        Game.Escape();
     }
 }
