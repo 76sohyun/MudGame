@@ -11,7 +11,7 @@ public class ItemChoose : Scene
 
     public override void Choice()
     {
-        for (int i = 1; i <= Game.items.Length; i++)
+        for (int i = 1; i <= Game.items.Count; i++)
         {
             Console.WriteLine($"{i}. {Game.items[i-1]}");
         }
@@ -26,19 +26,19 @@ public class ItemChoose : Scene
     public override void Result()
     {
         int itemCount = 0;
-        for (int i = 0; Game.items.Length; i++)
+        for (int i = 0; i < Game.items.Count; i++)
         {
             if (keyInt - 1 == i)
             {
-                Player.Inventory[itemCount++] = Game.items[i];
-                Game.items.RemoveAt[i];
+                Game.player.inventory.Add(Game.items[i]);
+                Game.items.RemoveAt(i);
             }
         }
     }
     
     public override void Next()
     {
-        if (Player.Inventory.Length = 4)
+        if (Game.player.inventory.Count == 4)
         {
             Game.CurSceneChange("Ax");
         }
