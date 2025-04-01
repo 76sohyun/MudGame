@@ -25,6 +25,8 @@ public static class Game
         _sceneDic.Add("Choose", new ItemChoose());
         livPer = 0;
         
+        player = new Player();
+        
         items = new List<string>();
         items.Add("Ax");
         items.Add("Radio");
@@ -39,9 +41,18 @@ public static class Game
 
     public static void End()
     {
-        Console.WriteLine("****************************");
-        Console.WriteLine("*****     Game Over    *****");
-        Console.WriteLine("****************************");
+        
+    }
+    
+    public static void GameOver(string reason)
+    {
+        Console.WriteLine("************************************");
+        Console.WriteLine("*           게임오버...              *");
+        Console.WriteLine("************************************");
+        Console.WriteLine();
+        Console.WriteLine(reason);
+        
+        gameOver = true;
     }
 
     public static void GameClear()
@@ -56,6 +67,7 @@ public static class Game
     {
         while (gameOver == false)
         {
+            player.Print();
             CurScene.Render();
             Console.WriteLine();
             CurScene.Choice();
