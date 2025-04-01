@@ -35,4 +35,14 @@ public class Player
         }
         Console.WriteLine();
     }
+    
+    public bool IsOwned(string item)
+    {
+        for(int i = 0; i < inventory.Count; i++)
+        {
+            if (inventory[i] == item) return true;
+        }
+        return false;
+    }
+    
 }
