@@ -136,7 +136,7 @@ public static class Game
             CurScene.Next();
             if (player.IsDead())
             {
-                gameOver = true;
+                GameOver("체력이 0이 되어 사망하였습니다.");
             }
         }
     }
