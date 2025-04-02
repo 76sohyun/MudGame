@@ -30,6 +30,7 @@ public abstract class Scene
         Console.Clear();
         Game.player.Print();
         Render();
+        Console.WriteLine();
         Choice();
         Input();
         Console.WriteLine();
