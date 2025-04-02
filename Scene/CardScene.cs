@@ -56,7 +56,7 @@ public class CardScene : Scene
 
             case ConsoleKey.D3:
                 Console.WriteLine("\"당신은 갑자기 분노조절장애가 생기며 대장에게 주먹을 날립니다.\"");
-                Console.WriteLine("대장의 부하들이 당신을 엄청나게 팹니다.... 퍽퍼퍼퍽");
+                Console.WriteLine("대장의 부하들이 당신을 엄청나게 팹니다.... 퍽퍼퍼퍽퍽");
                 break;
         }
     }
